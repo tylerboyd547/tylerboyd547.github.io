@@ -1,0 +1,137 @@
+/* Base styles */
+{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: "Allegro", sans-serif;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #208E6B;
+  border:#626E6A;
+  font-size: 4em;
+  font-family: "Arial", cursive;
+  text-shadow: 2px 2px 5px gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  margin: 10px;
+}
+
+/* Section styling */
+section {
+  background-color: #16BE89;
+  color: black;
+  border: 5px solid #626E6A;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  float: left;
+  height: 200px; /* Set a fixed height for all section boxes */
+  position: relative; /* Set position to relative for positioning child elements */
+}
+
+.section:nth-child(3n+1) {
+  clear: both;
+}
+
+.section:nth-child(1) p,
+.section:nth-child(2) p,
+.section:nth-child(3) p 
+
+{
+  margin-top: 40px; /* Add margin to the paragraph to push it away from the title box */
+  padding: 10px;
+  position: relative; /* Position the paragraph relative */
+  top: 50%; /* Move the paragraph down by 50% of the section's height */
+  transform: translateY(-50%); /* Adjust the position to center the paragraph vertically */
+}
+
+.section-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 70%;
+  background-color: #16BE89;
+  color: #black;
+  padding: 5px;
+  border-width: 0;
+}
+
+.section-title1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 20%;
+  text-align: center;
+  background-color: yellow;
+  color: #black;
+  padding: 5px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.section-title2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 20%;
+  text-align: center;
+  background-color: gray;
+  color: black;
+  padding: 5px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.section-title3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 20%;
+  text-align: center;
+  background-color: lightblue;
+  color: black;
+  padding: 5px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Desktop view */
+@media (min-width: 1200px) {
+  .section {
+    width: calc(100% / 3);
+  }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section {
+    width: calc(100% / 2);
+  }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+  }
+}
